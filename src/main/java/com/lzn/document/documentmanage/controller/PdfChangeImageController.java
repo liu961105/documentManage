@@ -1,11 +1,8 @@
 package com.lzn.document.documentmanage.controller;
 import java.awt.image.BufferedImage;
-import	java.io.IOException;
-
 import com.lzn.document.documentmanage.utils.PDFtoJPG;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.rendering.ImageType;
 import org.apache.pdfbox.rendering.PDFRenderer;
@@ -15,7 +12,6 @@ import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
-import java.io.IOException;
 import java.io.OutputStream;
 
 /**
