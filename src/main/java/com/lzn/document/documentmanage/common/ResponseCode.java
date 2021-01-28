@@ -6,7 +6,7 @@ package com.lzn.document.documentmanage.common;
 public enum ResponseCode {
 
     // 系统模块
-    SUCCESS(0, "操作成功"),
+    SUCCESS(200, "操作成功"),
     ERROR(1, "操作失败"),
     SERVER_ERROR(500, "服务器异常"),
     // 通用模块 1xxxx
