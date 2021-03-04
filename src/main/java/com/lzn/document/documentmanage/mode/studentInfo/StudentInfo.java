@@ -1,4 +1,4 @@
-package com.lzn.document.documentmanage.mode;
+package com.lzn.document.documentmanage.mode.studentInfo;
 
 import java.util.Date;
 

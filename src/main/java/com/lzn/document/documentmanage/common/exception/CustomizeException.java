@@ -7,7 +7,6 @@ package com.lzn.document.documentmanage.common.exception;
  **/
 public class CustomizeException extends RuntimeException{
     private String msg;
-
     public CustomizeException(String msg) {
         super(msg);
     }

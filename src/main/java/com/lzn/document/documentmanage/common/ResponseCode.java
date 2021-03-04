@@ -19,7 +19,15 @@ public enum ResponseCode {
     USERNAME_OR_PASSWORD_EMPTY(20002, "用户名或密码不能为空"),
     USERNAME_OR_PASSWORD_WRONG(20003, "用户名或密码错误"),
     USER_NOT_EXISTS(20004, "用户不存在"),
-    WRONG_PASSWORD(20005, "密码错误"),;
+    WRONG_PASSWORD(20005, "密码错误"),
+
+    // 文件模块 3xxxx
+    FILE_EMPTY(30001,"文件不能空"),
+    FILE_NAME_EMPTY(30002,"文件名称不能为空"),
+    FILE_MAX_SIZE(30003,"文件大小超出"),
+    FILE_NOTEXITS(30004,"文件不存在"),;
+
+
 
     private Integer code;
     private String msg;

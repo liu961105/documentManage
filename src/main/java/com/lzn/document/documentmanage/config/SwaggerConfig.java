@@ -29,8 +29,8 @@ public class SwaggerConfig {
     }
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("文档管理平台系统")
-                .description("文档管理平台接口文档")
+                .title("LZN-功能集成平台")
+                .description("LZN-功能集成平台")
                 .termsOfServiceUrl("")
                 .version("1.0")
                 .build();

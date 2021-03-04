@@ -1,4 +1,4 @@
-package com.lzn.document.documentmanage.controller;
+package com.lzn.document.documentmanage.controller.exception;
 
 import com.lzn.document.documentmanage.common.CommonResult;
 import com.lzn.document.documentmanage.common.ResponseCode;

@@ -1,12 +1,9 @@
-package com.lzn.document.documentmanage.controller;
+package com.lzn.document.documentmanage.controller.studentInfo;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.lzn.document.documentmanage.common.CommonResult;
 import com.lzn.document.documentmanage.common.ResponseCode;
-import com.lzn.document.documentmanage.mapper.StudentInfoMapper;
-import com.lzn.document.documentmanage.mode.StudentInfo;
-import com.lzn.document.documentmanage.pay.service.impl.PayService2;
+import com.lzn.document.documentmanage.mapper.studentInfo.StudentInfoMapper;
+import com.lzn.document.documentmanage.mode.studentInfo.StudentInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,33 +16,24 @@ import java.util.List;
 /**
  * @Description TODO
  * @Author LZN
- * @Date 2021/1/26 16:41
+ * @Date 2021/1/28 16:39
  **/
 @RestController
-@RequestMapping("/pay")
-@Api(description ="支付")
-public class PayController {
-
-    @Autowired
-    private PayService2 payService;
+@RequestMapping("api/student")
+@Api(description = "学生/班级 管理模块相关接口")
+public class StudentInfoController {
     @Autowired
     private StudentInfoMapper studentInfoMapper;
 
-    @GetMapping("/toPay")
-    @ApiOperation("去支付接口")
-    public CommonResult toPay(String code){
-        String pay = payService.pay(code);
-        return new CommonResult(ResponseCode.SUCCESS.getCode(), ResponseCode.SUCCESS.getMsg(),pay);
-    }
-    @GetMapping("/selectList")
-    @ApiOperation("测试接口")
+    @GetMapping("/selectSingleThread")
+    @ApiOperation("单线程测试接口")
     public CommonResult selectList(){
         List<StudentInfo> studentInfos = studentInfoMapper.selectList(null);
         return new CommonResult(ResponseCode.SUCCESS.getCode(), ResponseCode.SUCCESS.getMsg(),studentInfos);
     }
 
-    @GetMapping("/selectOne")
-    @ApiOperation("测试接口")
+    @GetMapping("/selectMultithreading")
+    @ApiOperation("数据库乐观锁测试接口")
     public CommonResult selectOne(){
         StudentInfo studentInfo = studentInfoMapper.selectById(1);
         studentInfo.setUserAge(23L);
@@ -58,5 +46,4 @@ public class PayController {
         // 如果没有乐观锁就会覆盖插队线程的值！
         return new CommonResult(ResponseCode.SUCCESS.getCode(), ResponseCode.SUCCESS.getMsg(),"");
     }
-
 }

@@ -1,4 +1,4 @@
-package com.lzn.document.documentmanage.mode;
+package com.lzn.document.documentmanage.valid;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
@@ -12,7 +12,7 @@ import javax.validation.constraints.Pattern;
  * @Date 2021/1/22 10:15
  **/
 @Data
-public class Register {
+public class RegisterValid {
     @Length(max = 20,min = 4,message = "用户名长度需要在4到20个字符之间")
     @NotBlank(message = "用户名不能为空")
     private String username;

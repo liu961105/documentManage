@@ -1,4 +1,4 @@
-package com.lzn.document.documentmanage.pay.service.impl;
+package com.lzn.document.documentmanage.service.pay.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

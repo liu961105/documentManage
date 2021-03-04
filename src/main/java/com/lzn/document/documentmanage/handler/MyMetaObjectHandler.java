@@ -5,10 +5,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.reflection.MetaObject;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
- * @Description TODO
+ * @Description
+ * 数据库中 创建时间 和修改时间 的自动填充Handler
  * @Author LZN
  * @Date 2021/1/27 14:12
  **/
@@ -19,12 +21,12 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
     public void insertFill(MetaObject metaObject) {
         log.info("start insert fill.....");
         // setFieldValByName(String fieldName, Object fieldVal, MetaObject metaObject
-        this.setFieldValByName("updateTime",new Date(),metaObject);
+        this.setFieldValByName("createTime", LocalDateTime.now(),metaObject);
     }
 
     @Override
     public void updateFill(MetaObject metaObject) {
         log.info("start update fill.....");
-        this.setFieldValByName("updateTime",new Date(),metaObject);
+        this.setFieldValByName("updateTime",LocalDateTime.now(),metaObject);
     }
 }

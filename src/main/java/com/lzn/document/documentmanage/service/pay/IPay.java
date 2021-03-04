@@ -1,4 +1,4 @@
-package com.lzn.document.documentmanage.pay.service;
+package com.lzn.document.documentmanage.service.pay;
 
 /**
  * @Description TODO

@@ -1,6 +1,6 @@
-package com.lzn.document.documentmanage.pay.service.impl;
+package com.lzn.document.documentmanage.service.pay.impl;
 
-import com.lzn.document.documentmanage.pay.service.IPay;
+import com.lzn.document.documentmanage.service.pay.IPay;
 import com.lzn.document.documentmanage.utils.PayCode;
 import org.springframework.stereotype.Service;
 
