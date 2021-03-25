@@ -4,6 +4,8 @@ import com.lzn.document.documentmanage.common.CommonResult;
 import com.lzn.document.documentmanage.common.ResponseCode;
 import com.lzn.document.documentmanage.mapper.studentInfo.StudentInfoMapper;
 import com.lzn.document.documentmanage.mode.studentInfo.StudentInfo;
+import com.lzn.document.documentmanage.utils.Decrypt;
+import com.lzn.document.documentmanage.utils.Encrypt;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,7 @@ public class StudentInfoController {
 
     @GetMapping("/selectSingleThread")
     @ApiOperation("单线程测试接口")
+    @Encrypt
     public CommonResult selectList(){
         List<StudentInfo> studentInfos = studentInfoMapper.selectList(null);
         return new CommonResult(ResponseCode.SUCCESS.getCode(), ResponseCode.SUCCESS.getMsg(),studentInfos);
@@ -34,6 +37,7 @@ public class StudentInfoController {
 
     @GetMapping("/selectMultithreading")
     @ApiOperation("数据库乐观锁测试接口")
+    @Decrypt
     public CommonResult selectOne(){
         StudentInfo studentInfo = studentInfoMapper.selectById(1);
         studentInfo.setUserAge(23L);

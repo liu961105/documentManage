@@ -14,8 +14,24 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CommonResult {
-    private int code;
-    private String message;
-    private Object data;
+    private Integer status;
+    private String msg;
+    private Object obj;
+    public static CommonResult build() {
+        return new CommonResult();
+    }
+    public static CommonResult ok(String msg) {
+        return new CommonResult(200, msg, null);
+    }
+    public static CommonResult ok(String msg, Object obj) {
+        return new CommonResult(200, msg, obj);
+    }
+    public static CommonResult error(String msg) {
+        return new CommonResult(500, msg, null);
+    }
+    public static CommonResult error(String msg, Object obj) {
+        return new CommonResult(500, msg, obj);
+    }
+
 
 }
